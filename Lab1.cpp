@@ -3,7 +3,7 @@ using namespace std;
 
 //Найти количество пар скобок (открытая и закрытая), корректно расположенных в строке
 string str = "";
-int answer, open_bracket, close_bracket = 0;
+int answer = 0, open_bracket = 0, close_bracket = 0;
 
 int main()
 {
