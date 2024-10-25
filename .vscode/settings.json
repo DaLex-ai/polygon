@@ -54,5 +54,6 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "sstream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "C:/Users/DaLex/Desktop/Algos-Labs/polygon/Lab-3/googletest"
 }

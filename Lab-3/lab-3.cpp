@@ -13,7 +13,7 @@ string *arr = new string[sizing]; // O(1) + O(1) - выделение памят
 string mixing(int sizing, string current_line){
     arr = new string[sizing]; // O(1) - присвоение
     res = ""; // O(1) - присвоение
-    for(int j = 0; j < sizing; j++){ // O(N) - в худшем случае, O(1) - когда sizing = 1, O(K) - средний вариант между O(1) и O(N)
+    for(int j = 0; j < sizing; j++){ // O(N)
         if(j != sizing - 1) // O(1) - проверка равенства
             arr[j] = current_line.substr(j+1, 1); // O(1) - присвоение
         else
@@ -48,5 +48,5 @@ int main(){
         else
             cout << "False " + test("False", number_lines, current_line) << endl;
     }
-    // Сложность алгоритма: O(N) - в худшем, O(K) - в среднем, O(1) - в лучшем
+    // Сложность алгоритма: O(N)
 }
