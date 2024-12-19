@@ -124,27 +124,6 @@ public:
       return std::numeric_limits<double>::infinity(); // Путь не найден
    }
 
-   double dfsUtil(const std::string& key, const std::string& endKey, std::unordered_map<std::string, bool>& visited) {
-      if (key == endKey) return 0; // Если достигли конца
-
-      visited[key] = true; // Помечаем узел как посещенный
-      double totalWeight = 0;
-      bool found = false;
-
-      for (const Edge& edge : nodes[key].edges) {
-         std::string neighborKey = generateKey(edge.lon, edge.lat);
-         if (!visited[neighborKey]) {
-            double weight = dfsUtil(neighborKey, endKey, visited);
-            if (weight != std::numeric_limits<double>::infinity()) {
-                totalWeight += edge.weight + weight; // Считаем вес
-                found = true;
-                break; // Сперва находим путь
-            }
-         }
-      }
-      return found ? totalWeight : std::numeric_limits<double>::infinity(); // Возвращаем общий вес или бесконечность
-   }
-
    double dfs(double lonStart, double latStart, double lonEnd, double latEnd) {
       std::string startKey = generateKey(lonStart, latStart);
       std::string endKey = generateKey(lonEnd, latEnd);
